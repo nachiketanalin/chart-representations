@@ -118,22 +118,23 @@ function TimeSeries({xAxis, yAxis, mounted, setMounted}) {
 };
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-      // if (!mounted) setMounted(true);
-      // else {
+  //     // if (!mounted) setMounted(true);
+  //     // else {
           
-        chart.render();
-      // }
-      console.log("hi");
-      // console.log(mounted);
+  //       chart.render();
+  //     // }
+  //     console.log("hi");
+  //     // console.log(mounted);
         
-  }, []);
+  // }, []);
 
   return (
     <div id='chart'>
         {/* <button onClick={printGraph}>SUBMIT</button> */}
         {/* <div id="chart">{printGraph}</div>         */}
+        {chart.render()}
     </div>
   )
 }
