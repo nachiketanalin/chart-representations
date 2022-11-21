@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Chart from "react-apexcharts";
 import ApexCharts from 'apexcharts'
 
 function ColumnChart({xAxis, yAxis}) {
 
-  function printGraph(){
+  useEffect(() => {
       // console.log("hi");
       var options = {
         series: [{
@@ -13,6 +13,7 @@ function ColumnChart({xAxis, yAxis}) {
       }],
         chart: {
         height: 500,
+        width : 1000,
         type: 'bar',
       },
       plotOptions: {
@@ -86,13 +87,16 @@ function ColumnChart({xAxis, yAxis}) {
       }
       };
 
-      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      var chart = new ApexCharts(document.querySelector("#columnchart"), options);
       chart.render();
-  }
+  });
   return (
-    <div id='chart'>
-        <button onClick={printGraph}>SUBMIT</button>
-        {/* <div id="charts">{printGraph}</div>         */}
+    <div id='columnchart' style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height:'80vh',
+    }}>
     </div>
   )
 }

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Chart from "react-apexcharts";
 import ApexCharts from 'apexcharts'
 
 function Sparkline2({yAxis, totalChildren}) {
 
-  function printGraph(){
+  useEffect(()=>{
     var options = {
         series: [{
         data: yAxis
@@ -12,6 +12,7 @@ function Sparkline2({yAxis, totalChildren}) {
         chart: {
         type: 'area',
         height: 160,
+        with : 1000,
         sparkline: {
           enabled: true
         },
@@ -42,12 +43,17 @@ function Sparkline2({yAxis, totalChildren}) {
       }
       };
 
-      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      var chart = new ApexCharts(document.querySelector("#sparkline2"), options);
       chart.render();
-  }
+  });
   return (
-    <div id='chart'>
-        <button onClick={printGraph}>SUBMIT</button>
+    <div id='sparkline2' style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height:'80vh',
+    }}>
+        {/* <button onClick={printGraph}>SUBMIT</button> */}
         {/* <div id="charts">{printGraph}</div>         */}
     </div>
   )
