@@ -83,9 +83,6 @@ function App() {
   const [tChildren, setTChildren] = useState(totalChildren);
 
   const getBooking = async () => {
-    // const res = await fetch(API_BASE + "/bookings");
-    // const data = await res.json();
-    // console.log(startDay);
     const test =
       API_BASE +
       "/bookings/" +
@@ -96,7 +93,7 @@ function App() {
       endDay +
       "/" +
       endMonth;
-    console.log(test);
+
     const res = await fetch(test);
     const data = await res.json();
     // console.log(API_BASE + "/bookings/"+startDay+"/"+startMonth+"/"+endDay+"/"+endMonth);
@@ -118,7 +115,6 @@ function App() {
       totalAdults += value;
       totalChildren += data[i].children;
 
-      // console.log(totalAdults)
       if (!mp1.has(key)) mp1.set(key, value);
       else {
         var t = mp1.get(key);
@@ -149,8 +145,6 @@ function App() {
         mp4.set(key, t);
       }
     }
-    // console.log(totalChildren);
-    // creating xaxis and yaxis vector
 
     xAxis1 = [];
     yAxis1 = [];
@@ -176,11 +170,7 @@ function App() {
     setY4(yAxis4);
     setTAdults(totalAdults);
     setTChildren(totalChildren);
-    // console.log(y1);
   };
-  // useEffect(() => {
-  //   getBooking();
-  // });
   return (
     <div className="App">
       <div>

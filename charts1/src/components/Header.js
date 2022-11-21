@@ -3,7 +3,7 @@ import React from 'react'
 function Header() {
   return (
     <div>
-        <h1>hello bro</h1>
+        <h1>Welcome to Waterdip AI Assignment - By Nachiketa Nalin</h1>
     </div>
   )
 }

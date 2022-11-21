@@ -17,20 +17,12 @@ function DateSelection({
     const sDay = Number(document.querySelector("#input1").value);
     const eDay = Number(document.querySelector("#input2").value);
 
-    // console.log(typeof(sDay));
-
     setStartDay(sDay);
     setEndDay(eDay);
     setStartMonth(sMonth);
     setEndMonth(eMonth);
 
-    // console.log(sDay);
-    // console.log(sMonth);
-    // console.log(eDay);
-    // console.log(eMonth);
-
     console.log("start day", startDay);
-    // console.log(endMonth);
 
     getBooking();
   }
